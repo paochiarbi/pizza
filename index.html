@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Don Juancho | 25 Años de Tradición</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-dark: #280905;
+            --color-secondary: #740A03;
+            --color-primary: #C3110C;
+            --color-accent: #E6501B;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffaf0;
+            color: var(--color-dark);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-gradient-custom {
+            background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-secondary) 100%);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .nav-link:hover {
+            color: var(--color-accent);
+        }
+
+        .pizza-card:hover {
+            transform: scale(1.03);
+            transition: transform 0.3s ease;
+        }
+
+        .section-padding {
+            padding: 80px 20px;
+        }
+
+        .shadow-custom {
+            box-shadow: 0 10px 30px rgba(40, 9, 5, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-[#280905]/95 text-white py-4 shadow-xl">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter flex items-center gap-2">
+                <span style="color: var(--color-accent);">🍕</span> PIZZA DON JUANCHO
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#menu" class="nav-link">Menú</a>
+                <a href="#resenas" class="nav-link">Reseñas</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <!-- Mobile Menu Icon -->
+            <div class="md:hidden text-2xl cursor-pointer" id="menuBtn">☰</div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#280905] text-center py-4 space-y-4">
+            <a href="#inicio" class="block py-2">Inicio</a>
+            <a href="#menu" class="block py-2">Menú</a>
+            <a href="#resenas" class="block py-2">Reseñas</a>
+            <a href="#contacto" class="block py-2">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Sección Inicio (Hero) -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center text-center text-white pt-16">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=2000" alt="Pizza artesanal en horno de leña" class="w-full h-full object-cover brightness-50">
+        </div>
+        <div class="relative z-10 px-6 max-w-4xl">
+            <h1 class="text-5xl md:text-7xl mb-4 leading-tight">Tradición que se siente en cada mordida</h1>
+            <p class="text-lg md:text-xl mb-8 opacity-90 font-light italic">Celebrando 25 años horneando historias en el corazón de la ciudad.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="btn-primary px-8 py-3 rounded-full text-lg font-semibold">Ver el Menú</a>
+                <a href="#contacto" class="border-2 border-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-[#280905] transition-all">Hacer un Pedido</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Elige tu Pizza (Menú) -->
+    <section id="menu" class="section-padding container mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl text-[#740A03] mb-4">Elige tu Pizza</h2>
+            <div class="w-24 h-1 bg-[#E6501B] mx-auto mb-6"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto">Nuestra masa artesanal se prepara diariamente siguiendo la receta original de Don Juancho desde 1999.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Producto 1 -->
+            <div class="pizza-card bg-white rounded-2xl overflow-hidden shadow-custom">
+                <img src="imagenes/pizza margarita.jpg" alt="Pizza Margherita" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-bold">La Clásica Juancho</h3>
+                        <span class="text-[#C3110C] font-bold">$12.50</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-4">Salsa de tomate secreta, mozzarella fresca, albahaca orgánica y aceite de oliva extra virgen.</p>
+                    <button class="w-full py-2 border border-[#C3110C] text-[#C3110C] rounded-lg hover:bg-[#C3110C] hover:text-white transition-colors">Agregar al pedido</button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="pizza-card bg-white rounded-2xl overflow-hidden shadow-custom">
+                <img src="imagenes/pizza pepperoni.jpg" alt="Pizza Pepperoni" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-bold">Suprema 25 Años</h3>
+                        <span class="text-[#C3110C] font-bold">$15.00</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-4">Doble pepperoni premium, pimientos asados, champiñones frescos y un toque de orégano italiano.</p>
+                    <button class="w-full py-2 border border-[#C3110C] text-[#C3110C] rounded-lg hover:bg-[#C3110C] hover:text-white transition-colors">Agregar al pedido</button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="pizza-card bg-white rounded-2xl overflow-hidden shadow-custom">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800" alt="Pizza Vegetariana" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-bold">Huerta de Don Juan</h3>
+                        <span class="text-[#C3110C] font-bold">$14.00</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-4">Maíz tierno, aceitunas negras, cebolla caramelizada, pimientos y queso de cabra.</p>
+                    <button class="w-full py-2 border border-[#C3110C] text-[#C3110C] rounded-lg hover:bg-[#C3110C] hover:text-white transition-colors">Agregar al pedido</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Reseñas -->
+    <section id="resenas" class="bg-[#280905] text-white section-padding">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl mb-4">Nuestros Comensales Dicen</h2>
+                <div class="w-20 h-1 bg-[#E6501B] mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-[#740A03] p-8 rounded-xl border-l-4 border-[#E6501B]">
+                    <div class="flex text-[#E6501B] mb-4">★★★★★</div>
+                    <p class="italic mb-4 text-gray-200">"He venido con mi familia desde que abrieron. La calidad nunca ha bajado. La masa es simplemente perfecta."</p>
+                    <div class="font-bold">- Roberto Gómez</div>
+                </div>
+                <div class="bg-[#740A03] p-8 rounded-xl border-l-4 border-[#E6501B]">
+                    <div class="flex text-[#E6501B] mb-4">★★★★★</div>
+                    <p class="italic mb-4 text-gray-200">"La mejor salsa de tomate que he probado en mi vida. Se nota la pasión y los 25 años de experiencia."</p>
+                    <div class="font-bold">- Elena Martínez</div>
+                </div>
+                <div class="bg-[#740A03] p-8 rounded-xl border-l-4 border-[#E6501B]">
+                    <div class="flex text-[#E6501B] mb-4">★★★★★</div>
+                    <p class="italic mb-4 text-gray-200">"El servicio es tan cálido como sus pizzas. Don Juancho siempre está ahí con una sonrisa."</p>
+                    <div class="font-bold">- Carlos Ruiz</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto y Ubicación -->
+    <section id="contacto" class="section-padding container mx-auto">
+        <div class="flex flex-col lg:flex-row gap-12 bg-white rounded-3xl overflow-hidden shadow-2xl">
+            <!-- Formulario -->
+            <div class="lg:w-1/2 p-10 bg-white">
+                <h2 class="text-3xl text-[#740A03] mb-6 font-bold">Contáctanos</h2>
+                <p class="mb-8 text-gray-600">Haz tu pedido a domicilio o reserva una mesa para celebrar con nosotros.</p>
+                
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Nombre Completo</label>
+                        <input type="text" placeholder="Tu nombre" class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-[#C3110C] outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">WhatsApp / Teléfono</label>
+                        <input type="text" placeholder="+51 987 654 321" class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-[#C3110C] outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Mensaje o Pedido</label>
+                        <textarea rows="4" placeholder="¿Qué se te antoja hoy?" class="w-full px-4 py-3 rounded-lg border focus:ring-2 focus:ring-[#C3110C] outline-none"></textarea>
+                    </div>
+                    <button type="button" class="w-full btn-primary text-white font-bold py-3 rounded-lg shadow-lg">Enviar a WhatsApp</button>
+                </form>
+            </div>
+
+            <!-- Información y Mapa -->
+            <div class="lg:w-1/2 bg-[#f4f4f4] relative min-h-[400px]">
+                <!-- Simulación de Mapa -->
+                <div class="absolute inset-0 bg-gray-300 flex items-center justify-center">
+                    <div class="text-center p-6">
+                        <div class="text-4xl mb-2">📍</div>
+                        <h4 class="font-bold text-xl mb-2 text-[#280905]">Visítanos</h4>
+                        <p class="text-gray-700">Av. Principal de la Tradición #123<br>Zona Gourmet, Ciudad de las Pizzas</p>
+                        <p class="mt-4 font-bold text-[#C3110C]">Horario: Mar - Dom: 12:00 PM - 10:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#280905] text-gray-400 py-12 border-t border-white/10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-2xl font-bold text-white mb-4">PIZZA DON JUANCHO</div>
+            <p class="mb-6">Desde 1999 creando momentos inolvidables en familia.</p>
+            <div class="flex justify-center space-x-6 mb-8 text-2xl">
+                <a href="#" class="hover:text-white">f</a>
+                <a href="#" class="hover:text-white">ig</a>
+                <a href="#" class="hover:text-white">tw</a>
+            </div>
+            <p class="text-sm">© 2024 Pizza Don Juancho. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica del menú móvil
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic en un link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
